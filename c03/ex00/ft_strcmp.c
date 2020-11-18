@@ -5,28 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrignon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 19:00:53 by dbrignon          #+#    #+#             */
-/*   Updated: 2020/11/03 19:09:08 by dbrignon         ###   ########.fr       */
+/*   Created: 2020/11/05 16:34:42 by dbrignon          #+#    #+#             */
+/*   Updated: 2020/11/05 16:39:50 by dbrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strcmp(char *s1, char *s2)
 {
-	int i;
-	int ritorno;
+	unsigned int	ritorno;
+	int				j;
+	int				i;
 
 	ritorno = 0;
 	i = 0;
-	while (s1[i])
+	j = 0;
+	while (*s1 != '\0' && (*s1 == *s2))
 	{
 		if (s1[i] != s2[i])
 		{
-			ritorno = s1[i] - s2[i];
+			ritorno = s1 - s2;
 			break ;
 		}
 		else
 			ritorno = 0;
-		i++;
+		s1++;
+		s2++;
 	}
-	return (ritorno);
+	return (ritorno = s1[i] - s2[i]);
 }
